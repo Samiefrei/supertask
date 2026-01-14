@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker build -t supertask:${{ github.sha }} .
-      - uses: aquasecurity/trivy-action@v0.24.0
+      - uses: aquasecurity/trivy-action@master
         with:
           image-ref: supertask:${{ github.sha }}
           severity: CRITICAL
